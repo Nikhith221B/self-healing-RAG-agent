@@ -2,7 +2,7 @@
 
 Agentic self-healing RAG backend with a critic-based feedback loop and retry mechanism. The system retrieves document chunks, generates a grounded answer, critiques grounding, reformulates the query when needed, and refuses when evidence is insufficient.
 
-**Recruiter summary:** Built a production-style Self-Healing RAG API using FastAPI, LangGraph, ChromaDB, and Gemini that retrieves context, generates answers, critiques grounding, and retries with reformulated queries when responses are weak or hallucinated.
+Built a production-style Self-Healing RAG API using FastAPI, LangGraph, ChromaDB, and Gemini that retrieves context, generates answers, critiques grounding, and retries with reformulated queries when responses are weak or hallucinated.
 
 > This is **not** classical RL (PPO/DQN). It is a **feedback-driven agentic workflow** inspired by RLHF-style evaluation. Optional **offline learning** uses logged runs (`logs/runs.jsonl`) to analyze accept/refuse rates and improve over time.
 
