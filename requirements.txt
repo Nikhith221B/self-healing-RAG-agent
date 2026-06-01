@@ -1,0 +1,10 @@
+fastapi
+uvicorn
+python-multipart
+pydantic
+python-dotenv
+langchain
+langgraph
+chromadb
+pdfplumber
+google-genai

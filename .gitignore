@@ -1,0 +1,11 @@
+.venv/
+__pycache__/
+*.py[cod]
+.env
+vectorstore/
+logs/
+.DS_Store
+*.log
+project_docs/
+# Personal uploads — do not commit
+data/sample_docs/Nagi_Reddy.pdf

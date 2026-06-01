@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Self-Healing RAG</title>
+    <link rel="stylesheet" href="/app/styles.css" />
+  </head>
+  <body>
+    <div class="layout">
+      <header>
+        <h1>Self-Healing RAG</h1>
+        <p class="subtitle">
+          Retrieve → Generate → Critique → Retry or refuse. Grounded answers from your documents.
+        </p>
+      </header>
+
+      <section class="panel">
+        <h2>Upload documents</h2>
+        <p class="hint">PDF, TXT, or Markdown</p>
+        <input type="file" id="file-input" multiple accept=".pdf,.txt,.md,.markdown" />
+        <button type="button" id="ingest-btn">Ingest files</button>
+        <p id="ingest-status" class="status"></p>
+      </section>
+
+      <section class="panel">
+        <h2>Ask a question</h2>
+        <textarea
+          id="question-input"
+          rows="3"
+          placeholder="e.g. How many paid leaves are available for full-time employees?"
+        ></textarea>
+        <div class="row">
+          <label>
+            top_k
+            <input type="number" id="top-k" value="5" min="1" max="20" />
+          </label>
+          <label>
+            max_retries
+            <input type="number" id="max-retries" value="2" min="0" max="5" />
+          </label>
+          <button type="button" id="ask-btn" class="primary">Ask</button>
+        </div>
+        <p id="ask-status" class="status"></p>
+      </section>
+
+      <section class="panel" id="answer-panel" hidden>
+        <div class="meta">
+          <span id="status-badge" class="badge"></span>
+          <span id="retry-meta"></span>
+        </div>
+        <h2>Answer</h2>
+        <div id="answer-text" class="answer"></div>
+
+        <h3>Critic feedback</h3>
+        <pre id="critic-json" class="code"></pre>
+
+        <h3>Query history</h3>
+        <ul id="query-history"></ul>
+
+        <h3>Sources</h3>
+        <div id="sources"></div>
+
+        <h3>Feedback</h3>
+        <p class="hint">Help improve retrieval over time (logged for offline learning).</p>
+        <p id="run-id" class="hint"></p>
+        <div class="row">
+          <button type="button" id="feedback-helpful">Helpful</button>
+          <button type="button" id="feedback-bad">Not helpful</button>
+        </div>
+        <p id="feedback-status" class="status"></p>
+      </section>
+    </div>
+    <script src="/app/app.js"></script>
+  </body>
+</html>
