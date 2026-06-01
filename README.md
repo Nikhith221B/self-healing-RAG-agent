@@ -207,15 +207,6 @@ Use aggregates to tune prompts, `top_k`, or rewrite strategies over time. This i
 python -m unittest tests.test_smoke -v
 ```
 
-## Project completion checklist
-
-- [ ] `python ingest.py` indexes all 3 files under `data/sample_docs/`
-- [ ] `python -m unittest tests.test_smoke -v` passes
-- [ ] UI demo at `/app/` (accept + refuse questions)
-- [ ] `logs/runs.jsonl` grows after `/ask`
-- [ ] Add screenshots to `screenshots/` (see `screenshots/README.md`)
-- [ ] Push to GitHub — confirm `.env` is not committed
-
 ## CLI (without UI)
 
 ```bash
