@@ -187,7 +187,7 @@ After `python ingest.py` (indexes all files in `data/sample_docs/`):
 
 Use the web UI at `/app/` or `POST /ask`.
 
-## Offline learning (Approach A)
+## Offline learning
 
 Each `/ask` call appends a row to `logs/runs.jsonl` (question, status, retries, critic scores). Human feedback goes to `logs/feedback.jsonl`.
 
